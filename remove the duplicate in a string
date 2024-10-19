@@ -1,0 +1,24 @@
+Write c program to remove the duplicate in a string 
+
+#include <stdio.h>
+#include<string.h>
+#include<stdbool.h>
+int main(){
+    char str1[100];
+    printf("Enter a string :");
+    scanf("%s",&str1);
+    bool a[256];
+    int len=strlen(str1);
+    char str2[len];
+    int j=0;
+    for(int i=0;i<len;i++){
+        if(a[str1[i]]==false){
+            str2[j]=str1[i];
+            j++;
+            a[str1[i]]=true;
+        }
+    }
+    printf("After remove duplicate string : %s",str2);
+    
+    return 0;
+}
