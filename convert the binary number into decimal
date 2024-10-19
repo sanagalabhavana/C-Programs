@@ -1,0 +1,25 @@
+3. Write a C program to convert the binary number into decimal.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int binary, decimal = 0, base = 1, remainder;
+
+    // Input binary number from user
+    printf("Enter a binary number: ");
+    scanf("%d", &binary);
+
+    // Convert binary to decimal
+    while (binary > 0) {
+        remainder = binary % 10;  // Extract the last digit (0 or 1)
+        decimal = decimal + remainder * base;  // Add to the decimal value
+        binary = binary / 10;  // Remove the last digit
+        base = base * 2;  // Update base (power of 2)
+    }
+
+    // Output the decimal value
+    printf("Decimal equivalent: %d\n", decimal);
+
+    return 0;
+}
