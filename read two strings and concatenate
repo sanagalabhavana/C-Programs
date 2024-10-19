@@ -1,0 +1,35 @@
+10. Write a C Program to read two strings and concatenate.
+#include <stdio.h>
+
+int main() {
+    char str1[100], str2[100], concatenated[200];
+    int i, j, length1, length2;
+
+    // Read the first string
+    printf("Enter the first string: ");
+    scanf("%s", str1);
+
+    // Read the second string
+    printf("Enter the second string: ");
+    scanf("%s", str2);
+
+    // Calculate the lengths of the strings
+    length1 = strlen(str1);
+    length2 = strlen(str2);
+
+    // Concatenate the strings using pointers
+    for (i = 0, j = 0; i < length1; i++, j++) {
+        concatenated[j] = str1[i];
+    }
+
+    for (i = 0; i < length2; i++, j++) {
+        concatenated[j] = str2[i];
+    }
+
+    concatenated[j] = '\0'; // Add the null terminator
+
+    // Print the concatenated string
+    printf("Concatenated string: %s\n", concatenated);
+
+    return 0;
+}
