@@ -1,0 +1,38 @@
+//Write a C program delete an element from an array.
+
+#include <stdio.h>
+
+int main() {
+    int n, i, pos;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter %d elements: ", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter the position of the element to be deleted: ");
+    scanf("%d", &pos);
+
+    if (pos < 0 || pos >= n) {
+        printf("Invalid position!\n");
+    } else {
+        // Overwrite the deleted element with the last element
+        arr[pos] = arr[n - 1];
+
+        // Reduce the array size by 1
+        n--;
+
+        printf("Array after deleting the element:\n");
+        for (i = 0; i < n; i++) {
+            printf("%d ", arr[i]);
+        }
+    }
+
+    return 0;
+}
+
